@@ -12,12 +12,12 @@ class CreateLaravelFormsTable extends Migration
     public function up(): void
     {
         Schema::create('laravel_forms', function (Blueprint $table) {
-            $table->id('form_id');
-            $table->string('name');
-            $table->string('address');
-            $table->integer('age');
-            $table->unsignedBigInteger('tech_id'); // 外部キー制約なし
-            $table->timestamps();
+            $table->id(); // ID（自動インクリメント）
+            $table->string('name'); // 名前
+            $table->string('email'); // メールアドレス
+            $table->integer('age'); // 年齢
+            $table->unsignedBigInteger('tech_ID'); // 技術ID（外部キー制約なし）
+            $table->timestamps(); // 作成日・更新日
         });
     }
 
