@@ -9,12 +9,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('laravel_forms', function (Blueprint $table) {
-            $table->id('フォームID');
-            $table->string('名前');
-            $table->string('メールアドレス');
-            $table->integer('年齢')->nullable();
-            $table->integer('技術ID')->nullable();
-            $table->string('出身')->nullable();
+            $table->id('form_id');
+            $table->string('name');
+            $table->string('email');
+            $table->integer('age')->nullable();
+            $table->integer('technology_id')->nullable();
+            $table->string('birthplace')->nullable();
             $table->timestamps();
             
             // 文字コード設定
