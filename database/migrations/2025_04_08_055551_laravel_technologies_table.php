@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('technologies', function (Blueprint $table) {
             $table->id();
             $table->string('language');
-            // $table->timestamps();
         });
 
         // 文字セットと照合順序を変更
