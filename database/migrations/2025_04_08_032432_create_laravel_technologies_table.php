@@ -10,7 +10,7 @@ class CreateLaravelTechnologiesTable extends Migration
     {
         Schema::create('laravel_technologies', function (Blueprint $table) {
             $table->id();
-            $table->string('得意な言語');
+            $table->string('tech_language');
             $table->timestamps();
         });
     }
