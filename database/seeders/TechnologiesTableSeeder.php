@@ -10,11 +10,11 @@ class TechnologiesTableSeeder extends Seeder
     public function run(): void
     {
         DB::table('laravel_technologies')->insert([
-            ['得意な言語' => 'HTML'],
-            ['得意な言語' => 'PHP'],
-            ['得意な言語' => 'CSS'],
-            ['得意な言語' => 'JAVA'],
-            ['得意な言語' => 'Ruby'],
+            ['tech_language' => 'HTML'],
+            ['tech_language' => 'PHP'],
+            ['tech_language' => 'CSS'],
+            ['tech_language' => 'JAVA'],
+            ['tech_language' => 'Ruby'],
         ]);
     }
 }

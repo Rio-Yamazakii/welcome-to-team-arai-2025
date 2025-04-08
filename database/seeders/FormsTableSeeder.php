@@ -10,11 +10,11 @@ class FormsTableSeeder extends Seeder
     public function run(): void
     {
         DB::table('laravel_forms')->insert([
-            ['名前' => 'テスト1', 'メールアドレス' => 'test1@com', '年齢' => 10, '技術ID' => 1],
-            ['名前' => 'テスト2', 'メールアドレス' => 'test2@com', '年齢' => 20, '技術ID' => 3],
-            ['名前' => 'テスト3', 'メールアドレス' => 'test3@com', '年齢' => 30, '技術ID' => 2],
-            ['名前' => 'テスト4', 'メールアドレス' => 'test4@com', '年齢' => 40, '技術ID' => 5],
-            ['名前' => 'テスト5', 'メールアドレス' => 'test5@com', '年齢' => 50, '技術ID' => 4],
+            ['name' => 'テスト1', 'email' => 'test1@com', 'age' => 10, 'tech_ID' => 1],
+            ['name' => 'テスト2', 'email' => 'test2@com', 'age' => 20, 'tech_ID' => 3],
+            ['name' => 'テスト3', 'email' => 'test3@com', 'age' => 30, 'tech_ID' => 2],
+            ['name' => 'テスト4', 'email' => 'test4@com', 'age' => 40, 'tech_ID' => 5],
+            ['name' => 'テスト5', 'email' => 'test5@com', 'age' => 50, 'tech_ID' => 4],
         ]);
     }
 }
