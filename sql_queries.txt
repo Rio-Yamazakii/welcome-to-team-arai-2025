@@ -1,0 +1,13 @@
+-- マイグレーションファイルで作成するため、SQLファイルには記述不要
+-- CREATE TABLE laravel_forms (
+--     フォームID INT PRIMARY KEY,
+--     名前 VARCHAR(255),
+--     メールアドレス VARCHAR(255),
+--     年齢 INT,
+--     技術ID INT
+-- );
+
+-- CREATE TABLE laravel_technologies (
+--     技術ID INT PRIMARY KEY,
+--     得意な言語 VARCHAR(255)
+-- );
