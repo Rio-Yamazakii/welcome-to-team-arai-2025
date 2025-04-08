@@ -1,0 +1,22 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateLaravelTechnologiesTable extends Migration
+{
+    public function up()
+    {
+        Schema::create('laravel_technologies', function (Blueprint $table) {
+            $table->id();
+            $table->string('得意な言語');
+            $table->timestamps();
+        });
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists('laravel_technologies');
+    }
+}
