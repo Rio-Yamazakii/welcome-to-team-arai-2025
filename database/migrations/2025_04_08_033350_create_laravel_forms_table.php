@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('laravel_forms', function (Blueprint $table) {
-            $table->id('フォームID');
-            $table->string('名前');
-            $table->string('メールアドレス');
-            $table->integer('年齢');
-            $table->unsignedBigInteger('技術ID');
-            $table->string('出身')->nullable();
+            $table->id('formID');
+            $table->string('name');
+            $table->string('mailaddres');
+            $table->integer('age');
+            $table->unsignedBigInteger('techID');
+            $table->string('from')->nullable();
             $table->timestamps();
 
             $table->charset = 'utf8mb4';
