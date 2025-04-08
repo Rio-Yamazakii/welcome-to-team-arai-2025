@@ -17,6 +17,10 @@ return new class extends Migration
             $table->string('mail_address');
             $table->integer('age');
             $table->unsignedBigInteger('skill_id');
+            $table->foreign('skill_id')
+                  ->references('id')
+                  ->on('laravel_technologies') 
+                  ->onDelete('cascade');
             $table->timestamps();
             $table->charset = 'utf8mb4';
             $table->collation = 'utf8mb4_general_ci';
