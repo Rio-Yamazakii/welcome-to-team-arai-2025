@@ -11,15 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('forms', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->integer('age');
+            $table->foreignId('technologies_id')->constrained('technologies')->onDelete('cascade');
+            // $table->rememberToken();
+            // $table->timestamps();
         });
+
+        // 文字セットと照合順序を変更
+        DB::statement("ALTER TABLE forms CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;");
     }
 
     /**

@@ -11,7 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('technologies', function (Blueprint $table) {
+            $table->id();
+            $table->string('language');
+            // $table->timestamps();
+        });
+
+        // 文字セットと照合順序を変更
+        DB::statement("ALTER TABLE forms CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;");
     }
 
     /**
