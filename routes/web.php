@@ -31,4 +31,3 @@ Route::get('/react-welcome', function () {
     return view('welcome_react');
 });
 
-
