@@ -60,7 +60,10 @@ class LaravelFormController extends Controller
     public function destroy($id)
     {
         $form = LaravelForm::findOrFail($id);
+
+
+
         $form->delete(); // 論理削除
-        return redirect()->route('forms.index');
+        return redirect()->route('forms.index')->with('success', '削除完了！');
     }
 }
