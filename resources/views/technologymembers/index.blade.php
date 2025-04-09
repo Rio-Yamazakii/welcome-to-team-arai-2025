@@ -52,18 +52,17 @@
     <!--  技術者リスト一覧と編集・削除ボタン-->
     <p class="moji">技術者リスト一覧<p>
     @foreach( $forms as $form)
-    <p>名前：{{ $form->name }}</p>
-    <p>年齢：{{ $form->age }}</p>
-    <p>言語：{{ $form->technologies->language }}</p>
-    <a href="{{ route('member.edit', $form->id) }}">編集</a><br>
-    <!-- 削除ボタン（確認ダイアログ付き） -->
-    <form action="{{ route('member.destroy', $form->id) }}" method="POST" style="display:inline;">
-        @csrf
-        @method('DELETE')
-        <button type="submit" onclick="return confirm('本当に削除しますか？')">削除</button>
-    </form>
-
-    <p>--------------------------------</p>
+        <p>名前：{{ $form->name }}</p>
+        <p>年齢：{{ $form->age }}</p>
+        <p>言語：{{ $form->technologies->language }}</p>
+        <a href="{{ route('member.edit', $form->id) }}">編集</a><br>
+        <!-- 削除ボタン（確認ダイアログ付き） -->
+        <form action="{{ route('member.destroy', $form->id) }}" method="POST" style="display:inline;">
+            @csrf
+            @method('DELETE')
+            <button type="submit" onclick="return confirm('本当に削除しますか？')">削除</button>
+        </form>
+        <p>--------------------------------</p>
     @endforeach
 </body>
 </html>
