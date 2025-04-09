@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Hello from './components/Hello';
+import Greeting from './components/Greeting';
 
 // アプリケーションのエントリーポイント
 if (document.getElementById('react-app')) {
     const root = ReactDOM.createRoot(document.getElementById('react-app'));
     root.render(
         <React.StrictMode>
-            <Hello />
+            <Greeting name="yanai" />
         </React.StrictMode>
     );
 }

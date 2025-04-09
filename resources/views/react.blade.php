@@ -13,7 +13,6 @@
 <body>
     <div id="react-app"></div>
 
-    <!-- インラインスクリプトでReactコンポーネントを定義 -->
     <script type="text/babel">
         // 子コンポーネント：propsを受け取って表示
         const Greeting = (props) => {
