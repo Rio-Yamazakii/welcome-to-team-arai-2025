@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('laravel_technologies', function (Blueprint $table) {
-            $table->id('skill_id');
+            $table->id();
             $table->string('well_language');
             $table->timestamps();
             $table->charset = 'utf8mb4';
