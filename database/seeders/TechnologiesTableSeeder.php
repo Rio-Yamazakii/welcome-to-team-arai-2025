@@ -14,11 +14,11 @@ class TechnologiesTableSeeder extends Seeder
     public function run(): void
     {
         DB::table('laravel_technologies')->insert([
-            ['skill_id' => 1, 'well_language' => 'HTML'],
-            ['skill_id' => 2, 'well_language' => 'PHP'],
-            ['skill_id' => 3, 'well_language' => 'CSS'],
-            ['skill_id' => 4, 'well_language' => 'JAVA'],
-            ['skill_id' => 5, 'well_language' => 'Ruby'],
+            ['id' => 1, 'well_language' => 'HTML'],
+            ['id' => 2, 'well_language' => 'PHP'],
+            ['id' => 3, 'well_language' => 'CSS'],
+            ['id' => 4, 'well_language' => 'JAVA'],
+            ['id' => 5, 'well_language' => 'Ruby'],
         ]);
     }
 }
