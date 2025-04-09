@@ -20,6 +20,7 @@ return new class extends Migration
             $table->timestamps();
             $table->charset = 'utf8mb4';
             $table->collation = 'utf8mb4_general_ci';
+            $table->foreign('tech_ID')->references('tech_ID')->on('laravel_technologies')->onDelete('cascade');
         });
     }
 
