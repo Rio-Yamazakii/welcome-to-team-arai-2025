@@ -1,7 +1,13 @@
 import React from 'react';
+import Parent from './Parent';
 
+//ここが今表示されている画面（app.jsxから）
 const Welcome = () => {
-    return <h1 style={{ color: 'black' }}>はろー　りあくと！</h1>;
+    return (
+        <div>
+            <Parent />
+        </div>
+    );
 }
 
 export default Welcome;
