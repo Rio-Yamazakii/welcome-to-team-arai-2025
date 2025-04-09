@@ -12,12 +12,11 @@ return new class extends Migration
     public function up(): void
     {
          Schema::create('laravel_technologies', function (Blueprint $table) {
-        $table->id('tech_id'); // 技術ID
-        $table->string('language');
-        $table->timestamps();
-
-        $table->charset = 'utf8mb4';
-        $table->collation = 'utf8mb4_general_ci';
+            $table->id('tech_id'); // 技術ID
+            $table->string('language');
+            $table->timestamps();
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_general_ci';
         });
     }
 

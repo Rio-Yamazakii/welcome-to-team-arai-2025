@@ -22,9 +22,7 @@ return new class extends Migration
     
             // 文字コード設定
             $table->charset = 'utf8mb4';
-            $table->collation = 'utf8mb4_general_ci';
-    
-          
+            $table->collation = 'utf8mb4_general_ci';  
         });
     }
 
