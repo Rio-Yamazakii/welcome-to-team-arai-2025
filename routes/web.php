@@ -6,6 +6,7 @@ use App\Http\Controllers\FormsTechnologiesController;
 use App\Http\Controllers\LaravelCrudFormController; //#8
 use Illuminate\Support\Facades\Route;
 
+
 Route::get('/forms', [LaravelFormController::class, 'index']);
 Route::get('/technologies', [TechnologyController::class, 'index']);
 Route::get('/forms_technologies', [FormsTechnologiesController::class, 'index']);
@@ -24,5 +25,10 @@ Route::get('/laravelform/{id}/edit', [LaravelCrudFormController::class, 'edit'])
 
 // 削除用のルート
 Route::delete('/laravelform/{id}', [LaravelCrudFormController::class, 'destroy'])->name('laravelform.destroy');
+
+//Reactのようこそページ
+Route::get('/react-welcome', function () {
+    return view('welcome_react');
+});
 
 
