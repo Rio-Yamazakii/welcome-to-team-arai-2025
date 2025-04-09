@@ -10,7 +10,6 @@ class LaravelCrudFormController extends Controller
     // フォームを表示
     public function create()
     {
-        // return view('laravelform.create'); // ビューを返す
         $forms = LaravelForm::all(); // 登録されたデータ全部取得
         return view('laravelform.create', compact('forms'));
     }
