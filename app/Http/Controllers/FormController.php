@@ -38,7 +38,16 @@ class FormController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:forms',
+            'age' => 'required|integer|min:1',
+            'technologies_id' => 'required|exists:technologies,id',
+        ]);
+
+        Form::create($request->all());
+
+        return redirect()->route('member.show')->with('success', '登録が完了しました');
     }
 
     /**
@@ -46,15 +55,20 @@ class FormController extends Controller
      */
     public function show(Form $form)
     {
-        //
+        $forms = Form::with('technologies')->get();// 全技術者リスト
+        $technologies = Technologies::all(); // 言語一覧を取得
+        
+        return view('technologymembers.index', compact('forms', 'technologies'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
+    //編集ページに遷移
     public function edit(Form $form)
     {
-        //
+        $technologies = Technologies::all(); // 言語一覧を取得
+        return view('technologymembers.edit', compact('form', 'technologies'));
     }
 
     /**
@@ -62,14 +76,26 @@ class FormController extends Controller
      */
     public function update(Request $request, Form $form)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:forms,email,' . $form->id, // 重複チェック
+            'age' => 'required|integer|min:1',
+            'technologies_id' => 'required|exists:technologies,id',
+        ]);
+
+        $form->update($request->all());
+
+        return redirect()->route('member.show')->with('success', '更新が完了しました');
     }
+
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Form $form)
     {
-        //
+        $form->delete();
+        return redirect()->route('member.show')->with('success', '削除が完了しました');
     }
+    
 }
