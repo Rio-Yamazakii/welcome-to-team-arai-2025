@@ -13,6 +13,14 @@ Route::get('/hello', function () {
 
 ##Route::get('/form', [FormController::class, 'index']
 ##);
-Route::get('/forms', [LaravelFormController::class, 'index']);
+// Route::get('/forms', [LaravelFormController::class, 'index']);
+
+Route::get('/forms', [LaravelFormController::class, 'index'])->name('forms.index');
+Route::get('/forms/create', [LaravelFormController::class, 'create'])->name('forms.create');
+Route::post('/forms', [LaravelFormController::class, 'store'])->name('forms.store');
+Route::get('/forms/edit/{id}', [LaravelFormController::class, 'edit'])->name('forms.edit');
+Route::post('/forms/update/{id}', [LaravelFormController::class, 'update'])->name('forms.update');
+Route::post('/forms/delete/{id}', [LaravelFormController::class, 'destroy'])->name('forms.destroy');
+
 
 

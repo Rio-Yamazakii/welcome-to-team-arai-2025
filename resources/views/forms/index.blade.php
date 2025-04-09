@@ -71,24 +71,4 @@
     </table>
 </body>
 </html>
-
-
-            <th>得意な言語</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach ($technologies as $technology)
-            <tr>
-                <td>{{ $technology->id }}</td>
-                <td>{{ $technology->tech_language }}</td>
-            </tr>
-        @endforeach
-    </tbody>
-</table>
-    
-    
-
-
-    
-</body>
-</html>
+ 
