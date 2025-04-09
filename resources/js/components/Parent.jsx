@@ -3,11 +3,11 @@ import React from 'react';
 import Child from './Child';  // Childコンポーネントをインポート
 
 const Parent = () => {
-    const name = "工藤！！";  // 渡したいデータ
+    const title = "Formテーブル一覧";  // 渡したいデータ
 
     return (
         <div>
-            Hello, <Child name={name} />
+            <Child title={title} />
         </div>
     );
 }
