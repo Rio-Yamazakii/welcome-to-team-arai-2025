@@ -13,19 +13,5 @@
 <body>
     <div id="react-app"></div>
 
-    <!-- インラインスクリプトでReactコンポーネントを定義 -->
-    <!-- <script type="text/babel">
-        const Hello = () => {
-            return (
-                <div>
-                    <h1>Hello React!</h1>
-                </div>
-            );
-        };
-
-        const rootElement = document.getElementById('react-app');
-        const root = ReactDOM.createRoot(rootElement);
-        root.render(<Hello />);
-    </script> -->
 </body>
 </html>
