@@ -14,7 +14,7 @@
     <div id="react-app"></div>
 
     <!-- インラインスクリプトでReactコンポーネントを定義 -->
-    <script type="text/babel">
+    <!-- <script type="text/babel">
         const Hello = () => {
             return (
                 <div>
@@ -26,6 +26,6 @@
         const rootElement = document.getElementById('react-app');
         const root = ReactDOM.createRoot(rootElement);
         root.render(<Hello />);
-    </script>
+    </script> -->
 </body>
 </html>
