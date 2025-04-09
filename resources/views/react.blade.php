@@ -14,28 +14,10 @@
     <div id="react-app"></div>
 
     <script type="text/babel">
-        // 子コンポーネント：propsを受け取って表示
-        const Greeting = (props) => {
-            return (
-                <div>
-                    <h1>Hello {props.name}!</h1>
-                </div>
-            );
-        };
-
-        // 親コンポーネント：子コンポーネントにpropsを渡す
-        const App = () => {
-            return (
-                <div>
-                    <Greeting name="yanai" />
-                </div>
-            );
-        };
-
-        // アプリケーションのレンダリング
-        const rootElement = document.getElementById('react-app');
-        const root = ReactDOM.createRoot(rootElement);
-        root.render(<App />);
+        const Greeting = ({name}) => <h1>Hello {name}!</h1>;
+        
+        ReactDOM.createRoot(document.getElementById('react-app'))
+            .render(<Greeting name="yanai" />);
     </script>
 </body>
 </html>
