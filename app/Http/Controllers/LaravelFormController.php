@@ -13,7 +13,7 @@ class LaravelFormController extends Controller
         // laravel_formsテーブルからすべてのデータを取得
         $forms = LaravelForm::all();
         $technologies = LaravelTechnology::all();
-        
+
         // ビューにデータを渡して表示
         return view('forms.index', compact('forms', 'technologies'));
     }
@@ -22,7 +22,7 @@ class LaravelFormController extends Controller
     {
         // LaravelTechnologyモデルからすべての技術を取得
         $technologies = LaravelTechnology::all();
-        
+
         // ビューに技術データを渡して表示
         return view('forms.create', compact('technologies'));
     }
@@ -61,6 +61,7 @@ class LaravelFormController extends Controller
     {
         $form = LaravelForm::findOrFail($id);
         $form->delete(); // 論理削除
-        return redirect()->route('forms.index');
+
+        return redirect()->route('laravel-forms.index')->with('success', '削除完了！');
     }
 }

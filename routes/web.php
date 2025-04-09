@@ -22,5 +22,9 @@ Route::get('/forms/edit/{id}', [LaravelFormController::class, 'edit'])->name('fo
 Route::put('/forms/{id}', [LaravelFormController::class, 'update'])->name('forms.update');
 Route::post('/forms/delete/{id}', [LaravelFormController::class, 'destroy'])->name('forms.destroy');
 
+Route::get('/react', function () {
+    return view('react');
+})->name('react.page');
+
 
 
