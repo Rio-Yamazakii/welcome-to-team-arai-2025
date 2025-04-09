@@ -23,3 +23,8 @@ Route::prefix('laravel-forms')->group(function () {
     Route::post('/{id}/update', [App\Http\Controllers\LaravelFormController::class, 'update'])->name('laravel-forms.update');
     Route::post('/{id}/delete', [App\Http\Controllers\LaravelFormController::class, 'destroy'])->name('laravel-forms.destroy');
 });
+
+// Reactページ用のルート
+Route::get('/react', function () {
+    return view('react');
+});
