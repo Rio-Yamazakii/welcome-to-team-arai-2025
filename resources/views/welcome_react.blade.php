@@ -13,7 +13,6 @@
 </head>
 
 <body>
-    <!-- Reactと連携できてないよ！^_^ -->
     <div id="0014_react"></div>
 </body>
 
