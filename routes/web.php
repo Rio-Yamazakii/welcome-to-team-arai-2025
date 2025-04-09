@@ -28,7 +28,7 @@ Route::delete('/laravelform/{id}', [LaravelCrudFormController::class, 'destroy']
 
 //Reactのようこそページ
 Route::get('/react-welcome', function () {
-    return view('welcome-react');
+    return view('welcome_react');
 });
 
 
