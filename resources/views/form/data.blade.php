@@ -16,7 +16,7 @@
 
     <h2>②言語の全レコード</h2>
     @foreach($technologies as $tech)
-        <p>{{ $tech->skill_id }} : {{ $tech->well_language }}</p>
+        <p>{{ $tech->id }} : {{ $tech->well_language }}</p>
     @endforeach
 
     <h2>③DBに登録されている名前、年齢、得意な言語</h2>
