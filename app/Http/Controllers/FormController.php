@@ -20,8 +20,6 @@ class FormController extends Controller
             ->select('laravel_forms.name', 'laravel_forms.age', 'laravel_technologies.lang')
             ->get();
 
-        // dd($formWithTech);
-
         return view('index', compact('firstForm', 'technologies', 'formWithTech'));
     }
 }
