@@ -2,7 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 
-#index.blade.phpのファイルを直接指定
+use App\Http\Controllers\LaravelFormController;
+
+
+
+#Hello.blade.phpのファイルを直接指定
 Route::get('/hello', function () {
-    return view('index');
+    return view('Hello');
 });
+
+##Route::get('/form', [FormController::class, 'index']
+##);
+Route::get('/forms', [LaravelFormController::class, 'index']);
+
+
