@@ -13,5 +13,30 @@
 <body>
     <div id="react-app"></div>
 
+    <!-- インラインスクリプトでReactコンポーネントを定義 -->
+    <script type="text/babel">
+        // 子コンポーネント：propsを受け取って表示
+        const Greeting = (props) => {
+            return (
+                <div>
+                    <h1>Hello {props.name}!</h1>
+                </div>
+            );
+        };
+
+        // 親コンポーネント：子コンポーネントにpropsを渡す
+        const App = () => {
+            return (
+                <div>
+                    <Greeting name="yanai" />
+                </div>
+            );
+        };
+
+        // アプリケーションのレンダリング
+        const rootElement = document.getElementById('react-app');
+        const root = ReactDOM.createRoot(rootElement);
+        root.render(<App />);
+    </script>
 </body>
 </html>
