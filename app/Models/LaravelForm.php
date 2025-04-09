@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class LaravelForm extends Model
 {
+    use SoftDeletes;
     use HasFactory;
 
     protected $table = 'forms';
