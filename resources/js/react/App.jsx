@@ -5,7 +5,7 @@ import Greeting from './components/Greeting';
 function App() {
   return (
     <div>
-      <Greeting name="yanai" />
+      <Greeting title="Formテーブル一覧" />
     </div>
   );
 }
