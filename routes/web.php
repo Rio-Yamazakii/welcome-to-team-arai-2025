@@ -36,3 +36,5 @@ Route::get('/forms-api', function () {
     return view('forms');
 });
 
+// API経由でフォームデータを取得（JSON形式）
+Route::get('/api/forms', [LaravelFormController::class, 'apiIndex']);

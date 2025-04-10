@@ -3,17 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Models\LaravelForm;
+use App\Services\FormService;
 
 class LaravelFormController extends Controller
 {
+    
+    protected $formService;
+
+    // コンストラクタでサービスを注入
+    public function __construct(FormService $formService)
+    {
+        $this->formService = $formService;
+    }
+
+    // フォーム一覧ページの表示
     public function index()
     {
-        // laravel_formsテーブルからすべてのデータを取得
-        $forms = LaravelForm::all();
-
+        // フォームデータをサービスクラスで取得
+        $forms = $this->formService->getAllForms();  // サービスクラスを使ってフォームデータを取得
+        
         // ビューにデータを渡して表示
         return view('forms.index', compact('forms'));
-        // return response()->json($forms);
     }
 
     public function apiIndex()
