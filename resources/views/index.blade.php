@@ -29,23 +29,4 @@
         <p>---------------------------<p>
     </div>
 @endforeach
-
-<a href="{{ route('form.create') }}">
-    <button type="button">新規登録</button>
-</a>
-
-@foreach ($forms as $form)
-    <div>
-        <strong>名前:</strong> {{ $form->name }} <br>
-        <strong>年齢:</strong> {{ $form->age }} <br>
-        <strong>得意な言語:</strong> {{ $form->technology->lang }} <br>
-        <a href="{{ route('form.edit', $form->formID) }}">編集</a>
-        <form method="POST" action="{{ route('form.destroy', $form->formID) }}">
-            @csrf
-            @method('POST')
-            <button type="submit">削除</button>
-        </form>
-    </div>
-@endforeach
-
 </html>
