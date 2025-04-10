@@ -1,13 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 import Greeting from './components/Greeting';
 
-// アプリケーションのエントリーポイント
+function App() {
+  return (
+    <div>
+      <Greeting name="yanai" />
+    </div>
+  );
+}
+
+// DOMがロードされたときにReactをマウント
 if (document.getElementById('react-app')) {
-    const root = ReactDOM.createRoot(document.getElementById('react-app'));
-    root.render(
-        <React.StrictMode>
-            <Greeting name="yanai" />
-        </React.StrictMode>
-    );
+  const root = createRoot(document.getElementById('react-app'));
+  root.render(<App />);
 }
