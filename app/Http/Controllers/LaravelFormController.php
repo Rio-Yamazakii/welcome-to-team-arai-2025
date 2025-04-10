@@ -18,8 +18,7 @@ class LaravelFormController extends Controller
 
     public function apiIndex()
     {
-        // laravel_formsテーブルからすべてのデータを取得
-        $forms = LaravelForm::all();
+        $forms = LaravelForm::with('technology')->get(); // ←リレーションをEagerロード
 
         // JSON形式でデータを返す
         return response()->json($forms);

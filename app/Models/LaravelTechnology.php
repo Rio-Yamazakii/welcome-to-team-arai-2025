@@ -14,5 +14,4 @@ class LaravelTechnology extends Model
 
     // 複数代入可能なカラム
     protected $fillable = ['tech_language'];
-
 }
