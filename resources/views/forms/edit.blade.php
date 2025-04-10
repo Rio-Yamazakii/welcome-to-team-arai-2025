@@ -27,5 +27,6 @@
 
     </table>
 </body>
+</head>
 
 </html>
