@@ -35,6 +35,7 @@ const Forms = () => {
                             <td className="border border-gray-300 p-2">
                                 {item.technology ? item.technology.tech_language : '未設定'}
                             </td>
+
                         </tr>
                     ))}
                 </tbody>

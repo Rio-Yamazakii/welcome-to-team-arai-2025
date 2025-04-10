@@ -11,5 +11,4 @@ class LaravelTechnology extends Model
 
     protected $table = 'laravel_technologies';
     protected $fillable = ['tech_language'];
-
 }
