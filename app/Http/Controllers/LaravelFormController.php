@@ -13,16 +13,11 @@ class LaravelFormController extends Controller
     {
         $this->laravelForm = $laravelForm;
     }
-    public function showFirst()
-    {
-        $firstRecord = LaravelForm::all(); // 最初のレコード取得
-        return view('form_tech_list', compact('firstForm'));
-    }
 
     public function form_tech_list()
     {
         $firstRecord = LaravelForm::first(); // 最初のレコード取得
-        // dd($firstRecord);
+        
         // 技術リストを取得
         $technologies = LaravelTechnology::all(); // 技術モデルがある場合、テクノロジーリストを取得
         $userSkills = $this->laravelForm
