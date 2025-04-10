@@ -10,8 +10,18 @@ class LaravelFormController extends Controller
     {
         // laravel_formsテーブルからすべてのデータを取得
         $forms = LaravelForm::all();
-        
+
         // ビューにデータを渡して表示
         return view('forms.index', compact('forms'));
+        // return response()->json($forms);
+    }
+
+    public function apiIndex()
+    {
+        // laravel_formsテーブルからすべてのデータを取得
+        $forms = LaravelForm::all();
+
+        // JSON形式でデータを返す
+        return response()->json($forms);
     }
 }
