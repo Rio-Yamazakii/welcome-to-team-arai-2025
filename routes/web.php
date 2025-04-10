@@ -15,7 +15,12 @@ Route::get('/memberlist/{form}/edit', [FormController::class, 'edit'])->name('me
 Route::put('/memberlist/{form}', [FormController::class, 'update'])->name('member.update');
 Route::delete('/memberlist/{form}', [FormController::class, 'destroy'])->name('member.destroy');
 
-//Reactのルーティング
+//Reactのルーティング#15
 Route::get('/react', function () {
     return view('react');
+});
+
+// #16のルーティング
+Route::get('/reactprops', function () {
+    return view('reactprops');
 });
