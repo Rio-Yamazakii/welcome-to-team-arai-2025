@@ -47,7 +47,7 @@ class LaravelFormController extends Controller
 
     public function update(Request $request, $id)
     {
-        $form = LaravelForm::findOrFail($id);
+        $form = LaravelForm::find($id);
         $form->name = $request->input('name');
         $form->mail_address = $request->input('mail_address');
         $form->age = $request->input('age');
