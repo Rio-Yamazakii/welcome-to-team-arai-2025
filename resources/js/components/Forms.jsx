@@ -1,26 +1,15 @@
-// Forms.jsx (React)
-
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import useForms from '../hooks/useForms'; // カスタムフックをインポート
 
 const Forms = () => {
-    const [forms, setForms] = useState([]);
-    const [error, setError] = useState(null);
+    const { forms, error, loading } = useForms(); // カスタムフックを呼び出し
 
-    useEffect(() => {
-        // APIからデータを取得
-        axios
-            .get('http://kudo.local/api/forms-view')
-            .then((response) => {
-                setForms(response.data); // 取得したデータをセット
-            })
-            .catch((error) => {
-                setError(error.message); // エラーがあれば表示
-            });
-    }, []);
+    if (loading) {
+        return <div>ロード中...</div>;  // ローディング表示
+    }
 
     if (error) {
-        return <div>エラー: {error}</div>;
+        return <div>エラー: {error}</div>;  // エラー表示
     }
 
     return (
@@ -54,4 +43,5 @@ const Forms = () => {
         </div>
     );
 };
+
 export default Forms;
