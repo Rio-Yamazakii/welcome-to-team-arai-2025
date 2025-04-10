@@ -5,24 +5,106 @@ namespace App\Http\Controllers;
 use App\Models\LaravelForm;
 use App\Models\LaravelTechnology;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class FormController extends Controller
 {
+    /**
+     * 一覧表示
+     */
     public function index()
     {
-        // ①最初のレコードを取得
-        $firstRecord = LaravelForm::first();
+        $forms = LaravelForm::with('technology')->get();
+        return view('form.index', compact('forms'));
+    }
 
-        // ②全ての技術を取得
+    /**
+     * 登録フォーム表示
+     */
+    public function create()
+    {
         $technologies = LaravelTechnology::all();
+        return view('form.create', compact('technologies'));
+    }
 
-        // ③名前、年齢、得意な言語を全て取得（JOINを使用）
-        $usersWithLanguages = DB::table('laravel_forms as f')
-            ->join('laravel_technologies as t', 'f.skill_id', '=', 't.id')
-            ->select('f.name', 'f.age', 't.well_language')
-            ->get();
+    /**
+     * データ保存処理
+     */
+    public function store(Request $request)
+    {
+        // バリデーション
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'mail_address' => 'required|string|email|max:255',
+            'age' => 'nullable|integer',
+            'skill_id' => 'required',
+        ]);
 
-        return view('form/data', compact('firstRecord', 'technologies', 'usersWithLanguages'));
+        if ($validator->fails()) {
+            return redirect()->route('form.create')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        // データ保存
+        $form = new LaravelForm();
+        $form->name = $request->input('name');
+        $form->mail_address = $request->input('mail_address');
+        $form->age = $request->input('age');
+        $form->skill_id = $request->input('skill_id');
+        $form->save();
+
+        return redirect()->route('form.index')->with('success', '登録が完了しました！');
+    }
+
+    /**
+     * 編集フォーム表示
+     */
+    public function edit($id)
+    {
+        $form = LaravelForm::findOrFail($id);
+        $technologies = LaravelTechnology::all();
+        return view('form.edit', compact('form', 'technologies'));
+    }
+
+    /**
+     * 更新処理
+     */
+    public function update(Request $request, $id)
+    {
+        // バリデーション
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'mail_address' => 'required|string|email|max:255',
+            'age' => 'nullable|integer',
+            'skill_id' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->route('form.edit', $id)
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        // データ更新
+        $form = LaravelForm::findOrFail($id);
+        $form->name = $request->input('name');
+        $form->mail_address = $request->input('mail_address');
+        $form->age = $request->input('age');
+        $form->skill_id = $request->input('skill_id');
+        $form->save();
+
+        return redirect()->route('form.index')->with('success', '更新が完了しました！');
+    }
+
+    /**
+     * 削除処理（論理削除）
+     */
+    public function destroy($id)
+    {
+        $form = LaravelForm::findOrFail($id);
+        $form->delete(); // SoftDeletesトレイトを使用しているので論理削除になります
+
+        return redirect()->route('form.index')->with('success', '削除が完了しました！');
     }
 }
