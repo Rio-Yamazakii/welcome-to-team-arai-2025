@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class LaravelFormController extends Controller
 {
+    protected $laravelForm;
     public function __construct(LaravelForm $laravelForm)
     {
         $this->laravelForm = $laravelForm;
@@ -27,6 +28,64 @@ class LaravelFormController extends Controller
         ->get()
         ->all(); 
        
-        return view('form_tech_list', compact('technologies','firstRecord','userSkills'));
+        return view('create_form', compact('technologies','firstRecord','userSkills'));
     }
-}
+    
+        // 登録フォーム表示
+        public function create()
+        {
+            $technologies = LaravelTechnology::all();
+            return view('create_form', compact('technologies'));
+        }
+    
+        // 登録処理
+        public function store(Request $request)
+        {
+            $request->validate([
+                'name'  => 'required',
+                'email' => 'required|email',
+                'age'   => 'nullable|integer',
+                'tech_id' => 'nullable|exists:laravel_technologies,tech_id',
+            ]);
+    
+            LaravelForm::create($request->all());
+    
+            return redirect()->route('forms.index')->with('success', '登録が完了しました！');
+        }
+    
+        // 編集フォーム表示
+        public function edit($form_id)
+        {
+            $form = LaravelForm::findOrFail($form_id);
+            $technologies = LaravelTechnology::all();
+            return view('edit_form', compact('form', 'technologies'));
+        }
+    
+        // 更新処理
+        public function update(Request $request, $form_id)
+        {
+            $request->validate([
+                'name'  => 'required',
+                'email' => 'required|email',
+                'age'   => 'nullable|integer',
+                'tech_id' => 'nullable|exists:laravel_technologies,tech_id',
+            ]);
+    
+            $form = LaravelForm::findOrFail($form_id);
+            $form->update($request->all());
+    
+            return redirect()->route('forms.index')->with('success', '更新が完了しました！');
+        }
+    
+        // 論理削除
+        public function destroy($form_id)
+        {
+            $form = LaravelForm::findOrFail($form_id);
+            $form->delete(); // SoftDeletes を使っている場合は論理削除
+    
+            return redirect()->route('forms.index')->with('success', '削除しました（論理削除）');
+        }
+
+        
+    }
+
