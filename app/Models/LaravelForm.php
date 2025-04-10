@@ -13,7 +13,6 @@ class LaravelForm extends Model
 
     protected $table = 'laravel_forms';
     protected $primaryKey = 'form_id'; // 主キー指定
-   // public $timestamps = false;
     protected $dates = ['deleted_at'];
 
 public function technology()
