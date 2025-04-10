@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\LaravelForm;
 use App\Services\FormService;
 
 class LaravelFormController extends Controller
 {
-    
     protected $formService;
 
     // コンストラクタでサービスを注入
@@ -28,7 +26,8 @@ class LaravelFormController extends Controller
 
     public function apiIndex()
     {
-        $forms = LaravelForm::with('technology')->get(); // ←リレーションをEagerロード
+        // サービスクラスを使ってフォームデータを取得
+        $forms = $this->formService->getAllForms(); // サービスクラスを使ってフォームデータを取得
 
         // JSON形式でデータを返す
         return response()->json($forms);

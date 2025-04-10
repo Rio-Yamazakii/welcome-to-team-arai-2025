@@ -14,6 +14,7 @@
                 <th>名前</th>
                 <th>メールアドレス</th>
                 <th>年齢</th>
+                <th>技術名</th>  <!-- 技術名の列を追加 -->
             </tr>
         </thead>
         <tbody>
@@ -23,6 +24,7 @@
                     <td>{{ $form->name }}</td>
                     <td>{{ $form->email }}</td>
                     <td>{{ $form->age }}</td>
+                    <td>{{ $form->technology ? $form->technology->tech_language : '未設定' }}</td> <!-- 技術名を表示 -->
                 </tr>
             @endforeach
         </tbody>

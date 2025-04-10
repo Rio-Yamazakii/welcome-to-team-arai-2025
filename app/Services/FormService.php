@@ -6,15 +6,10 @@ use App\Models\LaravelForm;
 
 class FormService
 {
-    // フォームデータを全て取得するメソッド
+    // すべてのフォームデータを取得
     public function getAllForms()
     {
-        return LaravelForm::all();  // 全てのフォームデータを返す
-    }
-
-    // 任意のフォームデータを取得するメソッド（例：ID指定）
-    public function getFormById($id)
-    {
-        return LaravelForm::find($id);  // ID指定でフォームデータを返す
+        // Eagerロードでtechnology（技術名）も一緒に取得
+        return LaravelForm::with('technology')->get();
     }
 }
