@@ -17,6 +17,6 @@ class LaravelForm extends Model
 
     public function technology()
     {
-        return $this->belongsTo(LaravelTechnology::class, 'tech_ID', 'id');
+        return $this->belongsTo(LaravelTechnology::class, 'tech_ID');
     }
 }

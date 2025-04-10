@@ -15,4 +15,8 @@ class LaravelTechnology extends Model
     // 複数代入可能なカラム
     protected $fillable = ['tech_language'];
 
+    // public function items()
+    // {
+    //     return $this->hasMany(LaravelForm::class, 'tech_ID');
+    // }
 }
