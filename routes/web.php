@@ -31,4 +31,8 @@ Route::get('/react-welcome', function () {
     return view('welcome_react');
 });
 
+//#18
+Route::get('/forms-api', function () {
+    return view('forms');
+});
 
