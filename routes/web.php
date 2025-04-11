@@ -28,3 +28,7 @@ Route::prefix('laravel-forms')->group(function () {
 Route::get('/react', function () {
     return view('react');
 });
+
+Route::get('/form-api', function () {
+    return view('form-api');
+});
