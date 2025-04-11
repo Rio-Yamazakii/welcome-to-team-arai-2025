@@ -5,5 +5,5 @@ import ExampleComponent from "./components/ExampleComponent";
 const container = document.getElementById("example");
 if (container) {
     const root = createRoot(container);
-    root.render(<ExampleComponent />);
+    root.render(<ExampleComponent name="Yoshihito" />); // ← ここで name を渡す
 }
