@@ -12,6 +12,15 @@ class FormController extends Controller
     /**
      * Display a listing of the resource.
      */
+    //apiのメソッド
+    public function getForms()
+    {
+        // Formsテーブルのデータをすべて取得
+        $forms = Form::all();
+        // JSON形式でデータを返す
+        return response()->json($forms);
+    }
+
     public function index()
     {
         $form1 = Form::find(1);
@@ -97,5 +106,4 @@ class FormController extends Controller
         $form->delete();
         return redirect()->route('member.show')->with('success', '削除が完了しました');
     }
-    
 }
