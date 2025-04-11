@@ -6,6 +6,13 @@ import HelloMessage from './components/HelloMessage';
 import TableDisplay from './components/TableDisplay';
 
 const App = () => {
+    useEffect(() => {
+        fetch('/api/forms')
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            });
+    }, []);
     return (
         <div>
             <Hello />
@@ -15,6 +22,7 @@ const App = () => {
 
     );
 };
+
 const root = ReactDOM.createRoot(document.getElementById('app'));
 root.render(
     <React.StrictMode>
