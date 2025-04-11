@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 
 class LaravelFormController extends Controller
 {
+    //apiのメソッド
+    public function getForms()
+    {
+        // Formsテーブルのデータをすべて取得
+        $forms = LaravelForm::all();
+        // JSON形式でデータを返す
+        return response()->json($forms, 200, [
+            'Content-Type' => 'application/json; charset=UTF-8'
+        ], JSON_UNESCAPED_UNICODE);
+    }
     public function index()
     {
         // laravel_formsテーブルからすべてのデータを取得
