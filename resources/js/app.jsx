@@ -6,13 +6,10 @@ import FormTable from './components/FormTable';
 
 
 const container = document.getElementById("root");
-// if (container) {
-//     createRoot(container).render(
-//         <React.StrictMode>
-//             <HelloMessage title="Formテーブル一覧" />
-//         </React.StrictMode>
-//     );
-// }
-const root = createRoot(container);
-
-root.render(<FormTable />);
+if (container) {
+    createRoot(container).render(
+        <React.StrictMode>
+            <FormTable title="Formテーブル一覧" />
+        </React.StrictMode>
+    );
+}
