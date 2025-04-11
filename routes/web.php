@@ -38,3 +38,5 @@ Route::get('/forms-api', function () {
 
 // API経由でフォームデータを取得（JSON形式）
 Route::get('/api/forms', [LaravelFormController::class, 'apiIndex']);
+
+Route::post('/forms', [LaravelFormController::class, 'store']);  // フォーム送信
