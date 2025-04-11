@@ -1,11 +1,11 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import Greeting from './components/Greeting';
+import FormTable from './components/FormTable';
 
 function App() {
   return (
-    <div>
-      <Greeting title="Formテーブル一覧" />
+    <div className="container">
+      <FormTable />
     </div>
   );
 }
