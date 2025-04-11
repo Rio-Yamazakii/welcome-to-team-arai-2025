@@ -1,9 +1,9 @@
 import React from "react";
 
-function ExampleComponent() {
+function ExampleComponent(props) {
     return (
         <div>
-            <h1>Hello, React</h1>
+            <h1>Hello, {props.name}!</h1>
         </div>
     );
 }
