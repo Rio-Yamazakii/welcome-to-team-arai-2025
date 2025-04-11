@@ -9,5 +9,3 @@ root.render(
     <React.StrictMode>
         <FormTable title="Formテーブル一覧" />
     </React.StrictMode>);
-
-//ReactDOM.createRoot(document.getElementById('app')).render(<FormTable />);
