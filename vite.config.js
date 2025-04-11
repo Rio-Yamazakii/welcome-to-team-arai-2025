@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
 
 
 
@@ -10,6 +11,7 @@ export default defineConfig({
             input: ['resources/css/app.css', 'resources/js/app.jsx'], // .jsxが正しいこと
             refresh: true,
         }),
+        tailwindcss(),
         react(), // ← 必須
     ],
     server: {
