@@ -49,26 +49,26 @@ function FormTable() {
   return (
     <div>
       <h1>Formテーブル一覧</h1>
-          <table style={{ borderCollapse: 'collapse', width: '100%' }}>
-              <thead>
-                  <tr>
-                      <th style={{ border: '1px solid black', padding: '8px' }}>id</th>
-                      <th style={{ border: '1px solid black', padding: '8px' }}>名前</th>
-                      <th style={{ border: '1px solid black', padding: '8px' }}>年齢</th>
-                      <th style={{ border: '1px solid black', padding: '8px' }}>出身地</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  {forms.map(form => (
-                      <tr key={form.form_id}>
-                          <td style={{ border: '1px solid black', padding: '8px' }}>{form.form_id}</td>
-                          <td style={{ border: '1px solid black', padding: '8px' }}>{form.name}</td>
-                          <td style={{ border: '1px solid black', padding: '8px' }}>{form.age}</td>
-                          <td style={{ border: '1px solid black', padding: '8px' }}>{form.birthplace || '-'}</td>
-                      </tr>
-                  ))}
-              </tbody>
-</table>
+      <table style={{ borderCollapse: 'collapse', width: '100%' }}>
+        <thead>
+          <tr>
+            <th style={{ border: '1px solid black', padding: '8px' }}>id</th>
+            <th style={{ border: '1px solid black', padding: '8px' }}>名前</th>
+            <th style={{ border: '1px solid black', padding: '8px' }}>年齢</th>
+            <th style={{ border: '1px solid black', padding: '8px' }}>出身地</th>
+          </tr>
+        </thead>
+        <tbody>
+          {forms.map(form => (
+            <tr key={form.form_id}>
+              <td style={{ border: '1px solid black', padding: '8px' }}>{form.form_id}</td>
+              <td style={{ border: '1px solid black', padding: '8px' }}>{form.name}</td>
+              <td style={{ border: '1px solid black', padding: '8px' }}>{form.age}</td>
+              <td style={{ border: '1px solid black', padding: '8px' }}>{form.birthplace || '-'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
