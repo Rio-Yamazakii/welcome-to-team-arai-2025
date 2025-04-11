@@ -5,5 +5,9 @@ import HelloMessage from './components/HelloMessage';
 
 const container = document.getElementById("root");
 if (container) {
-    createRoot(container).render(<HelloMessage name="kurasawa" />);
+    createRoot(container).render(
+        <React.StrictMode>
+            <HelloMessage name="kurasawa" />
+        </React.StrictMode>
+    );
 }
