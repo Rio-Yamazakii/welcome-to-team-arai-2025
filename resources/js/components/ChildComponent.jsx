@@ -2,8 +2,9 @@ import React from "react";
 
 // 引数としてpropsを受け取る
 const ChildComponent = (props) => {
-    // 親からもらったnameを表示
-    return <h2>Hello {props.name}!</h2>;
+    // 親からもらったtitleを表示
+    //HTMLの場合はclassだけでよいが、Reactの場合はclassNameと記述する
+    return <h2 className="text-3xl font-bold pb-8">{props.title}</h2>;
 };
 
 export default ChildComponent;
