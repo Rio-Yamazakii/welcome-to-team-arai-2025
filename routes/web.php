@@ -27,3 +27,7 @@ Route::get('/forms/{form_id}/edit', [LaravelFormController::class, 'edit'])->nam
 Route::put('/forms/{form_id}', [LaravelFormController::class, 'update'])->name('forms.update');
 
 Route::delete('/forms/{form_id}', [LaravelFormController::class, 'destroy'])->name('forms.destroy');
+
+Route::get('/react', function () {
+    return view('react');
+})->name('react.page');
