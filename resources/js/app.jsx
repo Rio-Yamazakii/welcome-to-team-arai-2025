@@ -6,5 +6,5 @@ import HelloChild from './components/HelloChild';
 const root = ReactDOM.createRoot(document.getElementById('react-root'));
 root.render(
             <React.StrictMode>
-                <HelloChild name="Akihiro" />
+                <HelloChild title="Formテーブル一覧" />
             </React.StrictMode>);
