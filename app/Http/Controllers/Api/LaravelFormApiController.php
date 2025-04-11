@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\LaravelForm;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class LaravelFormApiController extends Controller
 {
@@ -22,7 +23,14 @@ class LaravelFormApiController extends Controller
      */
     public function show($id)
     {
-        $form = LaravelForm::with('technology')->findOrFail($id);
-        return response()->json($form);
+        try {
+            $form = LaravelForm::with('technology')->findOrFail($id);
+            return response()->json($form);
+        } catch (ModelNotFoundException $e) {
+            return response()->json([
+                'message' => 'フォームが見つかりませんでした。',
+                'error' => 'Resource not found'
+            ], 404);
+        }
     }
 }
