@@ -1,5 +1,6 @@
 import React from 'react';
 import HelloMessage from './HelloMessage';
+import Child from './HelloMessage';
 
 const Parent = () => {
     const title = "Formテーブル一覧";
@@ -11,4 +12,4 @@ const Parent = () => {
     );
 }
 
-export default Parent;
+export default Child;
