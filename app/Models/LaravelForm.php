@@ -18,7 +18,7 @@ class LaravelForm extends Model
         'mailaddres',
         'age',
         'techID',
-        'birthplace'
+        'from'
     ];
 
     public function technology()
