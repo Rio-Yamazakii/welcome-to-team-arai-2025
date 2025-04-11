@@ -11,4 +11,9 @@ class LaravelTechnology extends Model
 
     protected $table = 'laravel_technologies';
     protected $fillable = ['tech_language'];
+
+    public function forms()
+    {
+        return $this->hasMany(LaravelForm::class, 'tech_ID', 'id');  // tech_IDが外部キー
+    }
 }

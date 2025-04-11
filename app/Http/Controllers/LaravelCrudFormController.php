@@ -16,29 +16,29 @@ class LaravelCrudFormController extends Controller
 
     //更新用
     public function update(Request $request, $id)
-{
-    $validated = $request->validate([
-        'name' => 'required|string',
-        'email' => 'required|email',
-        'age' => 'required|integer',
-        'tech_ID' => 'required|integer',
-    ]);
+    {
+        $validated = $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'age' => 'required|integer',
+            'tech_ID' => 'required|integer',
+        ]);
 
-    $form = LaravelForm::findOrFail($id);
-    $form->update($validated);
+        $form = LaravelForm::findOrFail($id);
+        $form->update($validated);
 
-    return redirect()->route('laravelform.create')->with('success', '更新しました！');
-}
+        return redirect()->route('laravelform.create')->with('success', '更新しました！');
+    }
 
 
     // 削除用
     public function destroy($id)
-{
-    $form = LaravelForm::findOrFail($id);
-    $form->delete();
+    {
+        $form = LaravelForm::findOrFail($id);
+        $form->delete();
 
-    return redirect()->route('laravelform.create')->with('success', '削除しました！');
-}
+        return redirect()->route('laravelform.create')->with('success', '削除しました！');
+    }
 
     //#8 編集用
     public function edit($id)

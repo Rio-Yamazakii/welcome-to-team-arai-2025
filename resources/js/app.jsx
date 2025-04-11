@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Forms from './components/Forms';
+import FormsValidation from './components/FormsValidation.jsx';
 
-const root = ReactDOM.createRoot(document.getElementById("0018_react"));
-root.render(<Forms />);
+const root = ReactDOM.createRoot(document.getElementById("0023_react"));
+root.render(<FormsValidation />);
