@@ -26,7 +26,7 @@
     </form>
 
     </table>
+    </head>
 </body>
-</head>
 
 </html>
