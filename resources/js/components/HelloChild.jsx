@@ -5,7 +5,7 @@ const HelloChild = ({ title }) => {
         <div className="p-4">
             {/* タイトルの「Form」だけ通常、「テーブル一覧」だけ太字 */}
             <h1 className="text-xl">
-                <span className="font-normal">Form</span>
+                <span className="font-normal font-bold">{title}</span>
                 <span className="font-bold">テーブル一覧</span>
             </h1>
 
