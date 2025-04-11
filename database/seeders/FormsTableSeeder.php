@@ -19,6 +19,7 @@ class FormsTableSeeder extends Seeder
                 'name' => 'テスト1',
                 'mail_address' => 'test1@com',
                 'age' => 10,
+                "from" => "東京",
                 'tech_ID' => 1,
             ],
             [
@@ -26,6 +27,7 @@ class FormsTableSeeder extends Seeder
                 'name' => 'テスト2',
                 'mail_address' => 'test2@com',
                 'age' => 20,
+                "from" => "神奈川",
                 'tech_ID' => 3,
             ],
             [
@@ -33,6 +35,7 @@ class FormsTableSeeder extends Seeder
                 'name' => 'テスト3',
                 'mail_address' => 'test3@com',
                 'age' => 30,
+                "from" => "埼玉",
                 'tech_ID' => 2,
             ],
             [
@@ -40,6 +43,7 @@ class FormsTableSeeder extends Seeder
                 'name' => 'テスト4',
                 'mail_address' => 'test4@com',
                 'age' => 40,
+                "from" => "千葉",
                 'tech_ID' => 5,
             ],
             [
@@ -47,6 +51,7 @@ class FormsTableSeeder extends Seeder
                 'name' => 'テスト5',
                 'mail_address' => 'test5@com',
                 'age' => 50,
+                "from" => "茨城",
                 'tech_ID' => 4,
             ],
         ]);

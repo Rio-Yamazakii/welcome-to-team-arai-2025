@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
 
 const TableDisplay = ({ title }) => {
+    const [data, setData] = useState([]);
+    useEffect(() => {
+        fetch('/api/forms')
+            .then(res => res.json())
+            .then(json => setData(json))
+            .catch(err => console.error('API fetch error:', err));
+    }, []);
     return (
         <div className="p-4">
             <h1 className="text-2xl font-bold mb-4">{title}</h1>
@@ -14,12 +22,15 @@ const TableDisplay = ({ title }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td className="border px-4 py-2">1</td>
-                        <td className="border px-4 py-2">太郎</td>
-                        <td className="border px-4 py-2">20</td>
-                        <td className="border px-4 py-2">埼玉</td>
-                    </tr>
+                    {/* APIから取得したデータを表示 */}
+                    {data.map((item) => (
+                        <tr key={item.form_ID}>
+                            <td className="border px-4 py-2">{item.form_ID}</td>
+                            <td className="border px-4 py-2">{item.name}</td>
+                            <td className="border px-4 py-2">{item.age}</td>
+                            <td className="border px-4 py-2">{item.from}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>

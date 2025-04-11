@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../css/app.css';
 import ReactDOM from 'react-dom/client';
 import Hello from './components/HelloReact';
