@@ -2,9 +2,10 @@ import './bootstrap';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import HelloChild from './components/HelloChild';
+import FormTable from './components/FormTable';
 
-const root = ReactDOM.createRoot(document.getElementById('react-root'));
+const root = ReactDOM.createRoot(document.getElementById('app'));
 root.render(
-            <React.StrictMode>
-                <HelloChild title="Formテーブル一覧" />
-            </React.StrictMode>);
+    <React.StrictMode>
+        <FormTable title="Formテーブル一覧" />
+    </React.StrictMode>);

@@ -31,3 +31,7 @@ Route::delete('/forms/{form_id}', [LaravelFormController::class, 'destroy'])->na
 Route::get('/react', function () {
     return view('react');
 })->name('react.page');
+
+Route::get('/form-table', function () {
+    return view('form_table'); // ← resources/views/form_table.blade.php を表示
+});
