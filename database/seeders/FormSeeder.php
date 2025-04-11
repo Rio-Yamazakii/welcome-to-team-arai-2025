@@ -19,6 +19,7 @@ class FormSeeder extends Seeder
             'email' => 'test1@com',
             'email_verified_at' => null,
             'Age' => 10,
+            'origin' => '東京',
             'technologies_id' => 1,
         ]);
 
@@ -28,6 +29,7 @@ class FormSeeder extends Seeder
             'email' => 'test2@com',
             'email_verified_at' => null,
             'Age' => 20,
+            'origin' => '神奈川',
             'technologies_id' => 3,
         ]);
 
@@ -37,6 +39,7 @@ class FormSeeder extends Seeder
             'email' => 'test3@com',
             'email_verified_at' => null,
             'Age' => 30,
+            'origin' => '埼玉',
             'technologies_id' => 2,
         ]);
 
@@ -46,6 +49,7 @@ class FormSeeder extends Seeder
             'email' => 'test4@com',
             'email_verified_at' => null,
             'Age' => 40,
+            'origin' => '千葉',
             'technologies_id' => 5,
         ]);
 
@@ -55,6 +59,7 @@ class FormSeeder extends Seeder
             'email' => 'test5@com',
             'email_verified_at' => null,
             'Age' => 50,
+            'origin' => '茨城',
             'technologies_id' => 4,
         ]);
     }
