@@ -62,7 +62,6 @@ class LaravelFormController extends Controller
         $form = LaravelForm::findOrFail($id);
         $form->delete(); // 論理削除
 
-
         return redirect()->route('laravel-forms.index')->with('success', '削除完了！');
     }
 }

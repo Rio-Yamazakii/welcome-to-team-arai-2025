@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>フォーム一覧</title>
+</head>
 
 <body>
     <form method="POST" action="{{ route('forms.update', $form->form_ID) }}">
