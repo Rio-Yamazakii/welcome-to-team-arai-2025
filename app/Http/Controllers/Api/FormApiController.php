@@ -11,6 +11,6 @@ class FormApiController extends Controller
     public function index()
     {
         $forms = LaravelForm::all(); // データベースの全レコードを取得
-        return view('form.index', compact('forms'));
+        return response()->json($forms); // JSONで返す
     }
 }
