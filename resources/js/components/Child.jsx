@@ -1,8 +1,7 @@
 import React from 'react';
 import HelloMessage from './HelloMessage';
-import Child from './HelloMessage';
 
-const Parent = () => {
+const Child = () => {
     const title = "Formテーブル一覧";
 
     return (
