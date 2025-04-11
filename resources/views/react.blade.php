@@ -2,9 +2,9 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>Hello React</title>
+    <title>React 表</title>
     @viteReactRefresh
-    @vite(['resources/js/app.jsx'])
+    @vite(['resources/css/app.css', 'resources/js/app.jsx'])
 </head>
 <body>
     <div id="root"></div>
