@@ -10,7 +10,7 @@ if (container) {
 }
 
 // 親をしてすると子も実行される。子を直接renderしないのは親がpropsを渡せなくなるから
-const reactContainer= document.getElementById("hello_name");
+const reactContainer= document.getElementById("form");
 if (reactContainer) {
     const root = createRoot(reactContainer);
     root.render(<ParentComponent />);

@@ -6,8 +6,8 @@ const ParentComponent = () => {
     // return内でHTMLにJSXを返す
     return (
         <div>
-            {/* 子コンポーネントにname="otsuka"をprops として渡す */}
-            <ChildComponent name="Otsuka" />
+            {/* 子コンポーネントにtitle="Formテーブル一覧"をprops として渡す */}
+            <ChildComponent title="Formテーブル一覧" />
         </div>
     );
 };
