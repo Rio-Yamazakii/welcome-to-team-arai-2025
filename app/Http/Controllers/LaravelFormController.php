@@ -86,6 +86,15 @@ class LaravelFormController extends Controller
             return redirect()->route('forms.index')->with('success', '削除しました（論理削除）');
         }
 
+        public function index()
+        {
+            // laravel_forms テーブルのすべてのデータを取得（論理削除されていないもの）
+            $forms = LaravelForm::whereNull('deleted_at')->get();
+    
+            // JSON 形式でレスポンスを返す
+            return response()->json($forms);
+        }
+
         
     }
 
