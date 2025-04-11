@@ -4,4 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\FormApiController;
 
-Route::get('/form', [FormApiController::class, 'index']);
+Route::get('/react-test', function () {
+    return view('react');
+})->name('react.test');
+
