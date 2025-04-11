@@ -14,4 +14,6 @@ Route::post('/form/{id}/update', [FormController::class, 'update'])->name('form.
 Route::get('/form/{id}/edit', [FormController::class, 'edit'])->name('form.edit');
 Route::delete('/form/{id}/delete', [FormController::class, 'destroy'])->name('form.destroy');
 
-
+Route::get('/react-test', function () {
+    return view('react');
+})->name('react.test');
